@@ -174,22 +174,16 @@ function drawMetadata(branch) {
     const font = getFontString(tree);
     for (const columnName of columnNames) {
       if (typeof data[columnName] !== 'undefined' && branch.leafStyle.fillStyle !== 'transparent') {
-        if (columnData.colour){
-        ctx.fillStyle = data[columnName].colour || data[columnName];
+        
+        ctx.fillStyle = "#eb4034" || data[columnName];
         ctx.fillRect(tx, ty, blockLength, size + i * stepCorrection);
-      }
         if (showLabels && typeof data[columnName].label === 'string') {
-          const newX = tx + quarterPadding
-          + (columnData.colour ? blockLength : 0);
-        ctx.fillStyle = fillStyle;
-        ctx.fillStyle = fillStyle;
-        ctx.textAlign = 'left';
-        ctx.textAlign = 'left';
-        ctx.textBaseline = 'middle';
-        ctx.textBaseline = 'middle';
-        ctx.fillText(data[columnName].label,
-        ctx.fillText(columnData.label, newX, ty + halfSize);
-          tx + blockLength + padding / 4, ty + size / 2); 
+          ctx.font = font;
+          ctx.fillStyle = fillStyle;
+          ctx.textAlign = 'left';
+          ctx.textBaseline = 'middle';
+          ctx.fillText(data[columnName].label,
+            tx + blockLength + padding / 4, ty + size / 2);
         }
       }
       tx += blockLength + padding;
