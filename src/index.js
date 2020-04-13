@@ -109,7 +109,7 @@ function drawMetadataHeading(branch, startX, startY) {
   for (const columnName of metadata) {
     const headerLength =
       blockLength + (showLabels ? _maxLabelWidth[columnName] : 0);
-    ctx.textAlign = 'center';
+    ctx.textAlign = 'left';
     ctx.textBaseline = 'middle';
     const labelX = x + headerLength / 2;
     ctx.rotate(-angle);
@@ -180,14 +180,14 @@ function drawMetadata(branch) {
     for (const columnName of columnNames) {
       const columnData = data[columnName];
       if (typeof columnData !== 'undefined' && branch.leafStyle.fillStyle !== 'transparent') {
-        console.log(columnData.colour);
+        // console.log(columnData.colour);
         if (columnData.colour) {
           ctx.fillStyle = columnData.colour;
           ctx.fillRect(tx, ty, blockLength, size + i * stepCorrection);
         }
         if (showLabels && typeof data[columnName].label === 'string') {
           const newX = tx + quarterPadding + (columnData.colour ? blockLength : 0);
-          console.log(ctx.fillStyle)
+          // console.log(ctx.fillStyle)
           ctx.fillStyle = fillStyle;
           ctx.textAlign = 'center';
           ctx.textBaseline = 'middle';
