@@ -187,7 +187,7 @@ function drawMetadata(branch) {
         if (showLabels && typeof data[columnName].label === 'string') {
           const newX = tx + quarterPadding + (columnData.colour ? blockLength : 0);
           ctx.fillStyle = fillStyle;
-          ctx.textAlign = 'left';
+          ctx.textAlign = 'middle';
           ctx.textBaseline = 'middle';
           ctx.fillText(columnData.label, newX, ty + halfSize);
         }
