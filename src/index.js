@@ -133,7 +133,8 @@ function drawMetadata(branch) {
   const tree = branch.tree;
   const { _maxLabelWidth, blockSize, blockLength, padding, propertyName,
           fillStyle, columns, showLabels } = branch.tree.metadata;
-
+  
+  const quarterPadding = padding / 4;
   // set initial x and y coordinates
   let tx = branch.getLabelStartX();
   let ty = 0;
@@ -145,17 +146,20 @@ function drawMetadata(branch) {
   // makes sure that the block size is not greater than tree step or max angle
   const maxSize = getMetadataMaxBlockSize(tree);
   const size = blockSize !== null ? Math.min(maxSize, blockSize) : maxSize;
+  const halfSize = size / 2;
 
   // add padding to both x and y axis
   if (tree.alignLabels) {
     tx += tree.labelAlign.getLabelOffset(branch);
   }
   tx += padding;
-  ty = ty - (size / 2);
+  // ty = ty - (size / 2);
+  ty = ty - halfSize;
 
   // draw column headers
   if (!tree.metadata._headingDrawn && hasMetadataHeadings(tree)) {
-    drawMetadataHeading(branch, tx, size / 2 + padding);
+    // drawMetadataHeading(branch, tx, size / 2 + padding);
+    drawMetadataHeading(branch, tx, halfSize + padding);
     tree.metadata._headingDrawn = true;
   }
 
@@ -171,23 +175,21 @@ function drawMetadata(branch) {
       isCircularTree(tree) && tree.alignLabels ?
         Angles.FULL * blockLength / tree.leaves.length :
         0;
-    const font = getFontString(tree);
+    // const font = getFontString(tree);
+    ctx.font = getFontString(tree);
     for (const columnName of columnNames) {
-      console.log(data[columnName]);
-      if (typeof data[columnName] !== 'undefined' && branch.leafStyle.fillStyle !== 'transparent') {
-        // if (columnData.colour) {
-        //   ctx.font = font;
-        //   ctx.fillStyle = columnData.colour;
-        //   ctx.fillRect(tx, ty, blockLength, size + i * stepCorrection);
-        // }
-        ctx.fillStyle = "#eb4034";
+      const columnData = data[columnName];
+      if (typeof columnData !== 'undefined' && branch.leafStyle.fillStyle !== 'transparent') {
+        if (columnData.colour) {
+          ctx.fillStyle = columnData.colour;
+          ctx.fillRect(tx, ty, blockLength, size + i * stepCorrection);
+        }
         if (showLabels && typeof data[columnName].label === 'string') {
-          ctx.font = font;
-          ctx.fillStyle =  "#eb4034";
+          const newX = tx + quarterPadding + (columnData.colour ? blockLength : 0);
+          ctx.fillStyle = fillStyle;
           ctx.textAlign = 'left';
           ctx.textBaseline = 'middle';
-          ctx.fillText(data[columnName].label,
-            tx + blockLength + padding / 4, ty + size / 2);
+          ctx.fillText(columnData.label, newX, ty + halfSize);
         }
       }
       tx += blockLength + padding;
