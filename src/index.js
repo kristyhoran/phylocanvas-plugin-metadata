@@ -113,6 +113,8 @@ function drawMetadataHeading(branch, startX, startY) {
     ctx.textBaseline = 'middle';
     const labelX = x + headerLength / 2;
     ctx.rotate(-angle);
+    console.log(Math.cos(angle) * labelX + Math.sin(angle) * sign * y);
+    console.log(Math.sin(angle) * labelX + Math.cos(angle) * -sign * y);
     ctx.fillText(columnName,
       Math.cos(angle) * labelX + Math.sin(angle) * sign * y,
       Math.sin(angle) * labelX + Math.cos(angle) * -sign * y);
