@@ -111,10 +111,10 @@ function drawMetadataHeading(branch, startX, startY) {
       blockLength + (showLabels ? _maxLabelWidth[columnName] : 0);
     ctx.textAlign = 'right';
     ctx.textBaseline = 'middle';
-    const labelX = x + headerLength / 2;
+    const labelX = x;
     ctx.rotate(-angle);
-    console.log(Math.cos(angle) * labelX + Math.sin(angle) * sign * y);
-    console.log(Math.sin(angle) * labelX + Math.cos(angle) * -sign * y);
+    // console.log(Math.cos(angle) * labelX + Math.sin(angle) * sign * y);
+    // console.log(Math.sin(angle) * labelX + Math.cos(angle) * -sign * y);
     ctx.fillText(columnName,
       Math.cos(angle) * labelX + Math.sin(angle) * sign * y,
       Math.sin(angle) * labelX + Math.cos(angle) * -sign * y);
