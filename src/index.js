@@ -18,7 +18,7 @@ const DEFAULTS = {
   propertyName: 'data',
   underlineHeaders: true,
   headerAngle: 90,
-  fillStyle: '',
+  fillStyle: 'black',
   strokeStyle: 'black',
   lineWidth: 1,
   font: null,
@@ -97,7 +97,7 @@ function drawMetadataHeading(branch, startX, startY) {
   const lineWidth = branch.tree.metadata.lineWidth / branch.tree.zoom;
   // Drawing Column headings
   ctx.font = getFontString(branch.tree);
-  ctx.fillStyle = "#eb4034";
+  ctx.fillStyle = fillStyle;
   ctx.strokeStyle = strokeStyle;
   ctx.lineWidth = lineWidth;
 
@@ -187,7 +187,7 @@ function drawMetadata(branch) {
         if (showLabels && typeof data[columnName].label === 'string') {
           const newX = tx + quarterPadding + (columnData.colour ? blockLength : 0);
           ctx.fillStyle = fillStyle;
-          ctx.textAlign = 'middle';
+          ctx.textAlign = 'center';
           ctx.textBaseline = 'middle';
           ctx.fillText(columnData.label, newX, ty + halfSize);
         }
