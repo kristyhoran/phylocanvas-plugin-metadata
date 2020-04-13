@@ -173,6 +173,7 @@ function drawMetadata(branch) {
         0;
     const font = getFontString(tree);
     for (const columnName of columnNames) {
+      console.log(data[columnName]);
       if (typeof data[columnName] !== 'undefined' && branch.leafStyle.fillStyle !== 'transparent') {
         // if (columnData.colour) {
         //   ctx.font = font;
