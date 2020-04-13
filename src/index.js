@@ -18,7 +18,7 @@ const DEFAULTS = {
   propertyName: 'data',
   underlineHeaders: true,
   headerAngle: 90,
-  fillStyle: 'red',
+  fillStyle: 'black',
   strokeStyle: 'black',
   lineWidth: 1,
   font: null,
@@ -179,10 +179,10 @@ function drawMetadata(branch) {
         //   ctx.fillStyle = columnData.colour;
         //   ctx.fillRect(tx, ty, blockLength, size + i * stepCorrection);
         // }
-
+        ctx.fillStyle = "#eb4034";
         if (showLabels && typeof data[columnName].label === 'string') {
           ctx.font = font;
-          ctx.fillStyle = fillStyle;
+          ctx.fillStyle =  "#eb4034";
           ctx.textAlign = 'left';
           ctx.textBaseline = 'middle';
           ctx.fillText(data[columnName].label,

@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PhyloCanvas/phylocanvas-plugin-metadata.git"
+    "url": "git+https://github.com/kristyhoran/phylocanvas-plugin-metadata.git"
   },
   "keywords": [
     "phylocanvas",
@@ -21,9 +21,9 @@
   "author": "",
   "license": "LGPL-3.0",
   "bugs": {
-    "url": "https://github.com/PhyloCanvas/phylocanvas-plugin-metadata/issues"
+    "url": "https://github.com/kristyhoran/phylocanvas-plugin-metadata/issues"
   },
-  "homepage": "https://github.com/PhyloCanvas/phylocanvas-plugin-metadata#readme",
+  "homepage": "https://github.com/kristyhoran/phylocanvas-plugin-metadata#readme",
   "devDependencies": {
     "babel-core": "^6.3.21",
     "babel-loader": "^6.2.0",
