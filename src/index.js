@@ -18,7 +18,7 @@ const DEFAULTS = {
   propertyName: 'data',
   underlineHeaders: true,
   headerAngle: 90,
-  fillStyle: 'black',
+  fillStyle: 'red',
   strokeStyle: 'black',
   lineWidth: 1,
   font: null,
@@ -174,11 +174,12 @@ function drawMetadata(branch) {
     const font = getFontString(tree);
     for (const columnName of columnNames) {
       if (typeof data[columnName] !== 'undefined' && branch.leafStyle.fillStyle !== 'transparent') {
-        if (columnData.colour) {
-          ctx.font = font;
-          ctx.fillStyle = columnData.colour;
-          ctx.fillRect(tx, ty, blockLength, size + i * stepCorrection);
-        }
+        // if (columnData.colour) {
+        //   ctx.font = font;
+        //   ctx.fillStyle = columnData.colour;
+        //   ctx.fillRect(tx, ty, blockLength, size + i * stepCorrection);
+        // }
+
         if (showLabels && typeof data[columnName].label === 'string') {
           ctx.font = font;
           ctx.fillStyle = fillStyle;
