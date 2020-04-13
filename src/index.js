@@ -180,6 +180,7 @@ function drawMetadata(branch) {
     for (const columnName of columnNames) {
       const columnData = data[columnName];
       if (typeof columnData !== 'undefined' && branch.leafStyle.fillStyle !== 'transparent') {
+        console.log(columnData.colour);
         if (columnData.colour) {
           ctx.fillStyle = columnData.colour;
           ctx.fillRect(tx, ty, blockLength, size + i * stepCorrection);
