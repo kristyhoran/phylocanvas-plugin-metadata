@@ -18,7 +18,7 @@ const DEFAULTS = {
   propertyName: 'data',
   underlineHeaders: true,
   headerAngle: 90,
-  fillStyle: 'black',
+  fillStyle: '',
   strokeStyle: 'black',
   lineWidth: 1,
   font: null,
@@ -97,7 +97,7 @@ function drawMetadataHeading(branch, startX, startY) {
   const lineWidth = branch.tree.metadata.lineWidth / branch.tree.zoom;
   // Drawing Column headings
   ctx.font = getFontString(branch.tree);
-  ctx.fillStyle = fillStyle;
+  ctx.fillStyle = "#eb4034";
   ctx.strokeStyle = strokeStyle;
   ctx.lineWidth = lineWidth;
 
