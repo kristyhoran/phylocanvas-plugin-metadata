@@ -109,7 +109,7 @@ function drawMetadataHeading(branch, startX, startY) {
   for (const columnName of metadata) {
     const headerLength =
       blockLength + (showLabels ? _maxLabelWidth[columnName] : 0);
-    ctx.textAlign = 'left';
+    ctx.textAlign = 'right';
     ctx.textBaseline = 'middle';
     const labelX = x + headerLength / 2;
     ctx.rotate(-angle);
