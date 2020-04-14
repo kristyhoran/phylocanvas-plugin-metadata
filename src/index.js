@@ -135,7 +135,7 @@ function drawMetadata(branch) {
   const tree = branch.tree;
   const { _maxLabelWidth, blockSize, blockLength, padding, propertyName,
           fillStyle, columns, showLabels } = branch.tree.metadata;
-  
+  console.log(columns);
   const quarterPadding = padding / 4;
   let aln = tree.alignLabels;
   tree.alignLabels = true;
