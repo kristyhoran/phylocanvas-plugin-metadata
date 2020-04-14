@@ -104,7 +104,7 @@ function drawMetadataHeading(branch, startX, startY) {
 
   const angle = (headerAngle / 180) * Math.PI;
   const y =
-    startY + _maxHeaderHeight / 2 + Math.sin(angle) * _maxHeaderWidth / 2;
+    startY + _maxHeaderHeight  + Math.sin(angle) * _maxHeaderWidth / 2;
   const sign = treeType === 'hierarchical' ? -1 : 1;
   let x = startX;
   for (const columnName of metadata) {
@@ -163,7 +163,7 @@ function drawMetadata(branch) {
   ty = ty - halfSize;
   
   // draw column headers
-  console.log(tree.metadata._headingDrawn);
+  // console.log(tree.metadata._headingDrawn);
   // drawMetadataHeading(branch, tx, halfSize + padding);
   if (!tree.metadata._headingDrawn ) {
     // drawMetadataHeading(branch, tx, size / 2 + padding);
