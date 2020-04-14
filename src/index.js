@@ -138,9 +138,9 @@ function drawMetadata(branch) {
   
   const quarterPadding = padding / 4;
   let aln = tree.alignLabels;
-  console.log(aln);
+  // console.log(aln);
   tree.alignLabels = true;
-  console.log(tree.alignLabels);
+  // console.log(tree.alignLabels);
   // console.log
   // set initial x and y coordinates
   let tx = branch.getLabelStartX() + tree.maxLabelLength[tree.treeType]; // get the starting point of the tiplabel and add on the lenght of the tip labels.
@@ -169,6 +169,7 @@ function drawMetadata(branch) {
   // console.log("halfsize:"+ halfSize);
 
   // draw column headers
+  console.log(tree.metadata._headingDrawn);
   if (!tree.metadata._headingDrawn && hasMetadataHeadings(tree)) {
     // drawMetadataHeading(branch, tx, size / 2 + padding);
     drawMetadataHeading(branch, tx, halfSize + padding);
