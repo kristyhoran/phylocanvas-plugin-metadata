@@ -138,12 +138,12 @@ function drawMetadata(branch) {
   
   const quarterPadding = padding / 4;
   // set initial x and y coordinates
-  let tx = branch.getLabelStartX();
+  let tx = branch.getLabelStartX() + tree.maxLabelLength[tree.treeType]; // get the starting point of the tiplabel and add on the lenght of the tip labels.
   let ty = 0;
 
-  if (tree.showLabels || (tree.hoverLabel && branch.highlighted)) {
-    tx += tree.maxLabelLength[tree.treeType];
-  }
+  // if (tree.showLabels || (tree.hoverLabel && branch.highlighted)) {
+  //   tx += tree.maxLabelLength[tree.treeType];
+  // }
 
   // makes sure that the block size is not greater than tree step or max angle
   const maxSize = getMetadataMaxBlockSize(tree);
