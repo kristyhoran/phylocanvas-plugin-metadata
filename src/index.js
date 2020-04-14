@@ -114,6 +114,7 @@ function drawMetadataHeading(branch, startX, startY) {
     ctx.textBaseline = 'middle';
     const labelX = x;
     ctx.rotate(-angle);
+    ctx.font("bold");
     // console.log(Math.cos(angle) * labelX + Math.sin(angle) * sign * y);
     // console.log(Math.sin(angle) * labelX + Math.cos(angle) * -sign * y);
     ctx.fillText(columnName,
