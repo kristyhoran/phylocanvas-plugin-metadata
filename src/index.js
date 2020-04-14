@@ -138,10 +138,7 @@ function drawMetadata(branch) {
   
   const quarterPadding = padding / 4;
   let aln = tree.alignLabels;
-  // console.log(aln);
   tree.alignLabels = true;
-  // console.log(tree.alignLabels);
-  // console.log
   // set initial x and y coordinates
   let tx = branch.getLabelStartX() + tree.maxLabelLength[tree.treeType]; // get the starting point of the tiplabel and add on the lenght of the tip labels.
   let ty = 0;
