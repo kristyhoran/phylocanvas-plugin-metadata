@@ -160,13 +160,9 @@ function drawMetadata(branch) {
   tx += padding;
   // ty = ty - (size / 2);
   ty = ty - halfSize;
-  // console.log("tx:"+tx);
-  // console.log("padding:" + padding);
-  // console.log("ty:" + ty);
-  // console.log("halfsize:"+ halfSize);
-
+  
   // draw column headers
-  console.log(tree.metadata._headingDrawn);
+  // console.log(tree.metadata._headingDrawn);
   if (!tree.metadata._headingDrawn && hasMetadataHeadings(tree)) {
     // drawMetadataHeading(branch, tx, size / 2 + padding);
     drawMetadataHeading(branch, tx, halfSize + padding);
