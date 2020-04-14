@@ -138,7 +138,7 @@ function drawMetadata(branch) {
   
   const quarterPadding = padding / 4;
   // set initial x and y coordinates
-  let tx = branch.getLabelStartX() + tree.maxLabelLength[tree.treeType]; // get the starting point of the tiplabel and add on the lenght of the tip labels.
+  let tx = branch.getLabelStartX() + tree.maxLabelLength[tree.treeType] + tree.labelAlign.getLabelOffset(branch); // get the starting point of the tiplabel and add on the lenght of the tip labels.
   let ty = 0;
 
   // if (tree.showLabels || (tree.hoverLabel && branch.highlighted)) {
@@ -151,9 +151,9 @@ function drawMetadata(branch) {
   const halfSize = size / 2;
 
   // add padding to both x and y axis
-  if (tree.alignLabels) {
-    tx += tree.labelAlign.getLabelOffset(branch);
-  }
+  // if (tree.alignLabels) {
+  //   tx += tree.labelAlign.getLabelOffset(branch);
+  // }
   tx += padding;
   // ty = ty - (size / 2);
   ty = ty - halfSize;
