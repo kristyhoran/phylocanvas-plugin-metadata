@@ -86,6 +86,7 @@ function getMetadataMaxBlockSize(tree) {
 }
 
 function drawMetadataHeading(branch, startX, startY) {
+  console.log('Drawing column header');
   const ctx = branch.tree.canvas;
   const { treeType } = branch.tree;
   const { _maxLabelWidth, _maxHeaderWidth, _maxHeaderHeight,
@@ -135,7 +136,7 @@ function drawMetadata(branch) {
   const tree = branch.tree;
   const { _maxLabelWidth, blockSize, blockLength, padding, propertyName,
           fillStyle, columns, showLabels } = branch.tree.metadata;
-  console.log(columns);
+  // console.log(columns);
   const quarterPadding = padding / 4;
   let aln = tree.alignLabels;
   tree.alignLabels = true;
