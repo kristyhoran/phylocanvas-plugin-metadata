@@ -142,12 +142,12 @@ function drawMetadata(branch) {
   let aln = tree.alignLabels;
   tree.alignLabels = true;
   // set initial x and y coordinates
-  let tx = branch.getLabelStartX() + tree.maxLabelLength[tree.treeType]; // get the starting point of the tiplabel and add on the lenght of the tip labels.
+  let tx = branch.getLabelStartX(); // get the starting point of the tiplabel and add on the lenght of the tip labels.
   let ty = 0;
   
-  // if (tree.showLabels || (tree.hoverLabel && branch.highlighted)) {
-  //   tx += tree.maxLabelLength[tree.treeType];
-  // }
+  if (tree.showLabels || (tree.hoverLabel && branch.highlighted)) {
+    tx += tree.maxLabelLength[tree.treeType];
+  }
 
   // makes sure that the block size is not greater than tree step or max angle
   const maxSize = getMetadataMaxBlockSize(tree);
@@ -164,7 +164,7 @@ function drawMetadata(branch) {
   ty = ty - halfSize;
   
   // draw column headers
-  // console.log(tree.metadata._headingDrawn);
+  console.log(tree.metadata._headingDrawn);
   // drawMetadataHeading(branch, tx, halfSize + padding);
   if (!tree.metadata._headingDrawn ) {
     // drawMetadataHeading(branch, tx, size / 2 + padding);
